@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ScreenMatch {
+public class DesafioSistemaBancario {
     private  static double valor = 0;
     private  static int opcaoCliente = 0;
     private  static double saldo = 1600;
@@ -34,7 +34,7 @@ public class ScreenMatch {
             System.out.println("""
                 1- Visualizar saldo
                 2- Tranferir
-                3- Sacar
+                3- Receber
                 4- Sair
                 """);
             opcaoCliente = entrada.nextInt();
@@ -59,25 +59,31 @@ public class ScreenMatch {
         }
     }
     public static void visualizarSaldo() {
-        System.out.println("O saldo atual: " + saldo);
+        System.out.println("Saldo atual: " + saldo);
     }
 
     public static double transferir() {
         System.out.println("""
                 Transferencia
                 
-                Digite o valor que deseja transferir """);
+                Digite quanto que deseja transferir: """);
         valor = entrada.nextDouble();
-        saldo -= valor;
+        if (valor > saldo) {
+            System.out.println("Você não possui saldo o suficiente.");
+        } else {
+            saldo -= valor;
+            System.out.println("O saldo atualizado é: " + saldo);
+        }
         return saldo;
     }
     public static double sacar() {
         System.out.println("""
-                Saque
+                Receber
                 
-                Digite o valor""");
+                Digite quanto deseja receber:""");
         valor = entrada.nextDouble();
-        saldo -= valor;
+        saldo += valor;
+        System.out.println("O saldo atualizado é: " + saldo);
         return saldo;
     }
 

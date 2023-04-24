@@ -6,7 +6,7 @@ public class CelsiusToFahrenheit {
     int fahrenheitArredondado = (int) fahrenheit;
     String nome = "Leonardo";
     public void retornarTemperaturaConvertida() {
-        System.out.println(String.format("Bem vindo ao sistema %s", nome));
+        System.out.println(String.format("Bem vindo %s", nome));
         System.out.println(
                 """
                                 
